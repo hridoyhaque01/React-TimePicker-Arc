@@ -48,8 +48,8 @@ body {
 
 .arc_tmc_input {
   flex: 1 1 0;
-  border: none;
-  outline: none;
+  border: none !important;
+  outline: none !important;
   padding: 12px 0;
   height: 100%;
 }

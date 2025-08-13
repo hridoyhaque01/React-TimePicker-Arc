@@ -29,9 +29,9 @@ export default [
         preferBuiltins: false,
       }),
       commonjs(),
-      // CSS processing - inject instead of extract
+      // Extract CSS for manual import
       postcss({
-        inject: true, // This will inject CSS into the head
+        extract: "TimePicker.css",
         minimize: true,
         sourceMap: false,
         use: ["sass"],
@@ -40,6 +40,40 @@ export default [
         tsconfig: "./tsconfig.json",
         declaration: true,
         declarationDir: "dist",
+        rootDir: "src",
+      }),
+    ],
+    external: [
+      "react",
+      "react-dom",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+    ],
+  },
+  // Second build with injected CSS for easier consumption
+  {
+    input: "src/index.ts",
+    output: {
+      file: "dist/index.with-css.esm.js",
+      format: "esm",
+      sourcemap: true,
+      exports: "named",
+    },
+    plugins: [
+      resolve({
+        preferBuiltins: false,
+      }),
+      commonjs(),
+      // Inject CSS for automatic styling
+      postcss({
+        inject: true,
+        minimize: true,
+        sourceMap: false,
+        use: ["sass"],
+      }),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        declaration: false, // Don't generate declarations for this build
         rootDir: "src",
       }),
     ],
