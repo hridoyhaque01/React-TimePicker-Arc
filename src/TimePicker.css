@@ -19,15 +19,9 @@
   --transition-duration: 0.3s all ease-in-out;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 .arc_wrapper {
   width: 100%;
   max-width: 320px;
-  margin: 0 auto;
   font-family: var(--font-family);
 }
 
@@ -48,8 +42,9 @@ body {
 
 .arc_tmc_input {
   flex: 1 1 0;
-  border: none !important;
-  outline: none !important;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
   padding: 12px 0;
   height: 100%;
 }

@@ -6,9 +6,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": false,
   "files": [
     "dist",
     "README.md",
@@ -19,6 +17,9 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js"
+    },
+    "./no-css": {
+      "import": "./dist/index.no-css.esm.js"
     },
     "./dist/TimePicker.css": "./dist/TimePicker.css"
   },

@@ -8,6 +8,7 @@ import postcss from "rollup-plugin-postcss";
 const packageJson = JSON.parse(readFileSync("./package.json", "utf8"));
 
 export default [
+  // Build with injected CSS (default - automatic styling)
   {
     input: "src/index.ts",
     output: [
@@ -29,9 +30,9 @@ export default [
         preferBuiltins: false,
       }),
       commonjs(),
-      // Extract CSS for manual import
+      // Inject CSS automatically - no manual import needed
       postcss({
-        extract: "TimePicker.css",
+        inject: true,
         minimize: true,
         sourceMap: false,
         use: ["sass"],
@@ -50,11 +51,11 @@ export default [
       "react/jsx-dev-runtime",
     ],
   },
-  // Second build with injected CSS for easier consumption
+  // Additional build to extract CSS file (for advanced users who want manual control)
   {
     input: "src/index.ts",
     output: {
-      file: "dist/index.with-css.esm.js",
+      file: "dist/index.no-css.esm.js",
       format: "esm",
       sourcemap: true,
       exports: "named",
@@ -64,16 +65,16 @@ export default [
         preferBuiltins: false,
       }),
       commonjs(),
-      // Inject CSS for automatic styling
+      // Extract CSS to separate file
       postcss({
-        inject: true,
+        extract: "TimePicker.css",
         minimize: true,
         sourceMap: false,
         use: ["sass"],
       }),
       typescript({
         tsconfig: "./tsconfig.json",
-        declaration: false, // Don't generate declarations for this build
+        declaration: false,
         rootDir: "src",
       }),
     ],

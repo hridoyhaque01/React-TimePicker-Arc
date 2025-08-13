@@ -605,30 +605,47 @@ function TimePicker({
     const screenTop = inputRect.top - contentHeight - 4;
     const screenLeft = inputRect.left - inputRect.width - 4;
     const screenRight = screenRect.width - inputRect.right - inputRect.width;
+    const isEnoughSpace =
+      screenRect.width >= inputRect.width && screenRect.height >= contentHeight;
 
     let positionY = inputRect.top;
     let positionX = inputRect.left;
-    if (align === "bottom") {
-      positionY =
-        screenBottom > 0
-          ? inputRect.bottom + 4
-          : screenTop > 0
-          ? screenTop
-          : inputRect.top - contentHalfHeight;
-    } else if (align === "top") {
-      positionY =
-        screenTop > 0
-          ? screenTop
-          : screenBottom > 0
-          ? inputRect.bottom
-          : inputRect.top - contentHalfHeight;
-    } else if (align === "left") {
-      positionX = screenLeft > 0 ? screenLeft : inputRect.right + 4;
-    } else if (align === "right") {
-      positionX = screenRight > 0 ? inputRect.right + 4 : screenLeft;
+    if (!isEnoughSpace) {
+      if (align === "bottom") {
+        positionY = inputRect.bottom + 4;
+      } else if (align === "top") {
+        positionY = screenTop;
+      } else if (align === "left") {
+        positionX = screenLeft;
+      } else if (align === "right") {
+        positionX = inputRect.right + 4;
+      } else {
+        positionY = inputRect.top - contentHalfHeight;
+        positionX = inputRect.left;
+      }
     } else {
-      positionY = inputRect.top - contentHalfHeight;
-      positionX = inputRect.left;
+      if (align === "bottom") {
+        positionY =
+          screenBottom > 0
+            ? inputRect.bottom + 4
+            : screenTop > 0
+            ? screenTop
+            : inputRect.top - contentHalfHeight;
+      } else if (align === "top") {
+        positionY =
+          screenTop > 0
+            ? screenTop
+            : screenBottom > 0
+            ? inputRect.bottom
+            : inputRect.top - contentHalfHeight;
+      } else if (align === "left") {
+        positionX = screenLeft > 0 ? screenLeft : inputRect.right + 4;
+      } else if (align === "right") {
+        positionX = screenRight > 0 ? inputRect.right + 4 : screenLeft;
+      } else {
+        positionY = inputRect.top - contentHalfHeight;
+        positionX = inputRect.left;
+      }
     }
     setPosition({
       x: positionX,
