@@ -43,12 +43,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hridoyhaque01/react-timepicker-arc.git"
+    "url": "https://github.com/hridoyhaque01/React-TimePicker-Arc.git"
   },
   "bugs": {
-    "url": "https://github.com/hridoyhaque01/react-timepicker-arc/issues"
+    "url": "https://github.com/hridoyhaque01/React-TimePicker-Arc/issues"
   },
-  "homepage": "https://github.com/hridoyhaque01/react-timepicker-arc#readme",
+  "homepage": "https://github.com/hridoyhaque01/React-TimePicker-Arc#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"

@@ -20,10 +20,6 @@ A flexible and customizable React TimePicker component with multiple format supp
 
 # React TimePicker Arc
 
-A flexible and customizable React TimePicker component with multiple format support, TypeScript support, and extensive customization options.
-
-## Installation
-
 ```bash
 npm install react-timepicker-arc
 ```
@@ -34,8 +30,9 @@ npm install react-timepicker-arc
 
 ```jsx
 import TimePicker from "react-timepicker-arc";
+import "react-timepicker-arc/dist/TimePicker.css";
 
-function App() {
+export default function App() {
   const [time, setTime] = useState("");
 
   return (
@@ -97,34 +94,6 @@ function App() {
   button?: string;
   buttonCancel?: string;
   buttonConfirm?: string;
-}
-```
-
-## Examples
-
-### With Form Libraries
-
-```jsx
-// With React Hook Form
-import { useForm, Controller } from "react-hook-form";
-import TimePicker from "@hridoyhaque01/react-timepicker";
-
-function MyForm() {
-  const { control } = useForm();
-
-  return (
-    <Controller
-      name="time"
-      control={control}
-      render={({ field }) => (
-        <TimePicker
-          value={field.value}
-          setValue={field.onChange}
-          returnType="iso-string"
-        />
-      )}
-    />
-  );
 }
 ```
 
