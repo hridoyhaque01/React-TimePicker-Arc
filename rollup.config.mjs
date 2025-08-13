@@ -29,12 +29,12 @@ export default [
         preferBuiltins: false,
       }),
       commonjs(),
-      // CSS processing BEFORE TypeScript
+      // CSS processing - inject instead of extract
       postcss({
-        extract: "TimePicker.css",
+        inject: true, // This will inject CSS into the head
         minimize: true,
         sourceMap: false,
-        use: ["sass"], // This helps with CSS processing
+        use: ["sass"],
       }),
       typescript({
         tsconfig: "./tsconfig.json",

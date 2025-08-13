@@ -6,7 +6,9 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "files": [
     "dist",
     "README.md",
@@ -17,7 +19,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js"
-    }
+    },
+    "./dist/TimePicker.css": "./dist/TimePicker.css"
   },
   "scripts": {
     "build": "rollup -c",
