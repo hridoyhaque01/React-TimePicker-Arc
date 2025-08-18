@@ -31,13 +31,12 @@
     "prebuild": "npm run clean"
   },
   "keywords": [
+    "react-timepicker-arc",
     "react",
     "timepicker",
     "time",
     "picker",
-    "component",
-    "typescript",
-    "ui"
+    "typescript"
   ],
   "author": "Hridoy Haque <hridoyhaque01@gmail.com>",
   "license": "MIT",
