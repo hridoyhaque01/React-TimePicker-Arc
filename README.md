@@ -12,12 +12,12 @@ A flexible and customizable **React TimePicker** and **ClockPicker** component w
 
 ## ⚠️ **BREAKING CHANGES in v2.0.0**
 
-> **🚨 IMPORTANT:** The import syntax has **completely changed** in v1.0.0. If you're upgrading from a previous version, you **must** update your imports!
+> **🚨 IMPORTANT:** The import syntax has **completely changed** in v2.0.0. If you're upgrading from a previous version, you **must** update your imports!
 
 ### ❌ Old Import (v1.0.1) - **DEPRECATED**
 
 ```jsx
-// This will NOT work in v1.0.0+
+// This will NOT work in v2.0.0+
 import TimePicker from "react-timepicker-arc";
 import "react-timepicker-arc/dist/TimePicker.css";
 ```
@@ -25,7 +25,7 @@ import "react-timepicker-arc/dist/TimePicker.css";
 ### ✅ New Import (v2.0.0+) - **REQUIRED**
 
 ```jsx
-// Use this new syntax for v1.0.0+
+// Use this new syntax for v2.0.0+
 import { TimePicker, ClockPicker } from "react-timepicker-arc";
 import "react-timepicker-arc/dist/index.css";
 ```
