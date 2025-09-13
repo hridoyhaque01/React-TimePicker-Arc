@@ -4,13 +4,17 @@ A flexible and customizable **React TimePicker** and **ClockPicker** component w
 
 [![Documentation](https://img.shields.io/badge/Docs-Open-blue)](https://timepickerarc-doc.vercel.app)
 
+## 🌐 Full Documentation & Live Examples
+
+👉 **[Open Documentation](https://timepickerarc-doc.vercel.app)** - Complete guide with interactive examples
+
 ---
 
-## ⚠️ **BREAKING CHANGES in v1.0.0**
+## ⚠️ **BREAKING CHANGES in v2.0.0**
 
 > **🚨 IMPORTANT:** The import syntax has **completely changed** in v1.0.0. If you're upgrading from a previous version, you **must** update your imports!
 
-### ❌ Old Import (v0.x) - **DEPRECATED**
+### ❌ Old Import (v1.0.1) - **DEPRECATED**
 
 ```jsx
 // This will NOT work in v1.0.0+
@@ -18,7 +22,7 @@ import TimePicker from "react-timepicker-arc";
 import "react-timepicker-arc/dist/TimePicker.css";
 ```
 
-### ✅ New Import (v1.0.0+) - **REQUIRED**
+### ✅ New Import (v2.0.0+) - **REQUIRED**
 
 ```jsx
 // Use this new syntax for v1.0.0+
@@ -62,12 +66,12 @@ import "react-timepicker-arc/dist/index.css";
 import { useState } from "react";
 
 export default function App() {
-  const [time, setTime] = useState("");
+  const [value, setValue] = useState("");
 
   return (
     <TimePicker
-      value={time}
-      setValue={setTime}
+      value={value}
+      setValue={setValue}
       onTimeChange={(time, isValid) => {
         console.log("Time:", time, "Valid:", isValid);
       }}
@@ -85,12 +89,12 @@ import "react-timepicker-arc/dist/index.css";
 import { useState } from "react";
 
 export default function App() {
-  const [time, setTime] = useState("");
+  const [value, setValue] = useState("");
 
   return (
     <ClockPicker
-      value={time}
-      setValue={setTime}
+      value={value}
+      setValue={setValue}
       onTimeChange={(time, isValid) => {
         console.log("Time:", time, "Valid:", isValid);
       }}
@@ -209,11 +213,6 @@ import { ClockPicker } from "react-timepicker-arc";
 | Visual Interface  | List-based | Clock-based |
 | Touch Friendly    | ✅         | ✅          |
 | Mouse Interaction | ✅         | ✅          |
-
-## 🌐 Documentation
-
-Full documentation & live examples:
-👉 [Open Documentation](https://timepickerarc-doc.vercel.app)
 
 ## 📝 License
 

@@ -1,6 +1,6 @@
 {
   "name": "react-timepicker-arc",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "module",
   "description": "A flexible and customizable React TimePicker component with multiple format support",
   "main": "dist/index.cjs.js",
