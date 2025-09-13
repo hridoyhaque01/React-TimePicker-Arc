@@ -167,16 +167,16 @@ export default function App() {
 />
 ```
 
-## 🚀 Migration Guide (v0.x → v1.0.0)
+## 🚀 Migration Guide (v1.0.1 → v2.0.0)
 
 ### Step 1: Update Your Imports
 
 ```jsx
-// ❌ Before (v0.x)
+// ❌ Before (v1.0.1)
 import TimePicker from "react-timepicker-arc";
 import "react-timepicker-arc/dist/TimePicker.css";
 
-// ✅ After (v1.0.0+)
+// ✅ After (v2.0.0+)
 import { TimePicker } from "react-timepicker-arc";
 import "react-timepicker-arc/dist/index.css";
 ```
@@ -196,7 +196,7 @@ import { ClockPicker } from "react-timepicker-arc";
 - **Old:** `"react-timepicker-arc/dist/TimePicker.css"`
 - **New:** `"react-timepicker-arc/dist/index.css"`
 
-## 🆕 What's New in v1.0.0
+## 🆕 What's New in v2.0.0
 
 ### New Features
 
