@@ -47,7 +47,7 @@
   "bugs": {
     "url": "https://github.com/hridoyhaque01/React-TimePicker-Arc/issues"
   },
-  "homepage": "https://github.com/hridoyhaque01/React-TimePicker-Arc#readme",
+  "homepage": "https://timepickerarc-doc.vercel.app",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
