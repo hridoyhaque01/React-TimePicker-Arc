@@ -21,7 +21,7 @@
     "./no-css": {
       "import": "./dist/index.no-css.esm.js"
     },
-    "./dist/TimePicker.css": "./dist/TimePicker.css"
+    "./dist/index.css": "./dist/index.css"
   },
   "scripts": {
     "build": "rollup -c",

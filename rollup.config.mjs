@@ -7,6 +7,23 @@ import postcss from "rollup-plugin-postcss";
 
 const packageJson = JSON.parse(readFileSync("./package.json", "utf8"));
 
+// Custom plugin to add "use client" directive
+const addUseClientDirective = () => ({
+  name: "add-use-client-directive",
+  generateBundle(options, bundle) {
+    Object.keys(bundle).forEach((fileName) => {
+      const file = bundle[fileName];
+      if (
+        file.type === "chunk" &&
+        file.code &&
+        !file.code.startsWith('"use client"')
+      ) {
+        file.code = '"use client";\n' + file.code;
+      }
+    });
+  },
+});
+
 export default [
   // Build with injected CSS (default - automatic styling)
   {
@@ -43,6 +60,7 @@ export default [
         declarationDir: "dist",
         rootDir: "src",
       }),
+      addUseClientDirective(), // Add the custom plugin
     ],
     external: [
       "react",
@@ -67,16 +85,17 @@ export default [
       commonjs(),
       // Extract CSS to separate file
       postcss({
-        extract: "TimePicker.css",
+        extract: "index.css",
         minimize: true,
         sourceMap: false,
         use: ["sass"],
       }),
       typescript({
         tsconfig: "./tsconfig.json",
-        declaration: false,
+        declaration: false, // Set to false to fix the declarationMap warning
         rootDir: "src",
       }),
+      addUseClientDirective(), // Add the custom plugin here too
     ],
     external: [
       "react",
