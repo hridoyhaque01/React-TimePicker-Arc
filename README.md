@@ -2,7 +2,29 @@
 
 A flexible and customizable **React TimePicker** and **ClockPicker** component with multiple format support, TypeScript support, and extensive customization options.
 
-[![Documentation](https://img.shields.io/badge/Docs-Open-blue)](https://your-vercel-docs-url.vercel.app)
+[![Documentation](https://img.shields.io/badge/Docs-Open-blue)](https://timepickerarc-doc.vercel.app)
+
+---
+
+## ⚠️ **BREAKING CHANGES in v1.0.0**
+
+> **🚨 IMPORTANT:** The import syntax has **completely changed** in v1.0.0. If you're upgrading from a previous version, you **must** update your imports!
+
+### ❌ Old Import (v0.x) - **DEPRECATED**
+
+```jsx
+// This will NOT work in v1.0.0+
+import TimePicker from "react-timepicker-arc";
+import "react-timepicker-arc/dist/TimePicker.css";
+```
+
+### ✅ New Import (v1.0.0+) - **REQUIRED**
+
+```jsx
+// Use this new syntax for v1.0.0+
+import { TimePicker, ClockPicker } from "react-timepicker-arc";
+import "react-timepicker-arc/dist/index.css";
+```
 
 ---
 
@@ -141,11 +163,58 @@ export default function App() {
 />
 ```
 
+## 🚀 Migration Guide (v0.x → v1.0.0)
+
+### Step 1: Update Your Imports
+
+```jsx
+// ❌ Before (v0.x)
+import TimePicker from "react-timepicker-arc";
+import "react-timepicker-arc/dist/TimePicker.css";
+
+// ✅ After (v1.0.0+)
+import { TimePicker } from "react-timepicker-arc";
+import "react-timepicker-arc/dist/index.css";
+```
+
+### Step 2: Choose Your Component
+
+```jsx
+// Option 1: TimePicker (with seconds support)
+import { TimePicker } from "react-timepicker-arc";
+
+// Option 2: ClockPicker (visual clock, no seconds)
+import { ClockPicker } from "react-timepicker-arc";
+```
+
+### Step 3: Update CSS Import
+
+- **Old:** `"react-timepicker-arc/dist/TimePicker.css"`
+- **New:** `"react-timepicker-arc/dist/index.css"`
+
+## 🆕 What's New in v1.0.0
+
+### New Features
+
+- **ClockPicker Component**: Brand new visual clock interface
+- **Enhanced UI**: Completely redesigned user interface
+- **Better TypeScript Support**: Improved type definitions
+- **Named Exports**: Tree-shaking friendly imports
+
+### Component Differences
+
+| Feature           | TimePicker | ClockPicker |
+| ----------------- | ---------- | ----------- |
+| Seconds Support   | ✅         | ❌          |
+| Visual Interface  | List-based | Clock-based |
+| Touch Friendly    | ✅         | ✅          |
+| Mouse Interaction | ✅         | ✅          |
+
 ## 🌐 Documentation
 
 Full documentation & live examples:
-👉 [Open Documentation](https://your-vercel-docs-url.vercel.app)
+👉 [Open Documentation](https://timepickerarc-doc.vercel.app)
 
 ## 📝 License
 
-MIT © Hridoy Haque
+MIT © [Hridoy Haque](https://github.com/hridoyhaque01)
