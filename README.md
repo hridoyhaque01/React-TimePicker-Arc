@@ -4,14 +4,10 @@ A flexible and customizable **React TimePicker** and **ClockPicker** component w
 
 ## 🖼️ Live Examples Screenshots
 
-<div style="display: flex;align-items:flex-start; gap: 20px;">
-  <a href="https://timepickerarc-doc.vercel.app/docs/time-picker/examples">
-    <img src="./src/assets/timepicker.png" alt="TimePicker Screenshot" width="300"/>
-  </a>
-  <a href="https://timepickerarc-doc.vercel.app/docs/clock-picker/examples">
-    <img src="./src/assets/clockpicker.png" alt="ClockPicker Screenshot" width="300"/>
-  </a>
-</div>
+[![TimePicker Screenshot](./src/assets/timepicker.png)](https://timepickerarc-doc.vercel.app/docs/time-picker/examples)
+[![ClockPicker Screenshot](./src/assets/clockpicker.png)](https://timepickerarc-doc.vercel.app/docs/clock-picker/examples)
+
+[![Documentation](https://img.shields.io/badge/Docs-Open-blue)](https://timepickerarc-doc.vercel.app)
 
 ## 🌐 Full Documentation & Live Examples
 
